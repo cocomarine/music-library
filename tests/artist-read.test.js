@@ -27,7 +27,7 @@ describe('Read Artist', () => {
     describe('GET /artists', () => {
         it('returns all artist recordes in the database', async () => {
             const { status, body } = await request(app)
-                .get('/artist')
+                .get('/artists')
                 .send();
 
             expect(status).to.equal(200);
@@ -44,7 +44,7 @@ describe('Read Artist', () => {
     describe('GET /artists/{id}', () => {
         it('returns the artist with the correct id', async () => {
             const { status, body } = await request(app)
-                .get(`/artist/${artists[0].id}`)
+                .get(`/artists/${artists[0].id}`)
                 .send();
 
             expect(status).to.equal(200);
@@ -53,7 +53,7 @@ describe('Read Artist', () => {
 
         it('returns a 404 if the artist does not exist', async () => {
             const { status, body } = await request(app)
-                .get('/artist/1234567')
+                .get('/artists/1234567')
                 .send();
 
             expect(status).to.equal(404);

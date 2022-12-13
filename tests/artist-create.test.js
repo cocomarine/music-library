@@ -7,7 +7,7 @@ describe('create artist', () => {
     describe('artist', () => {
         describe('POST', () => {
             it('creates a new artist in the database', async () => {
-                const { status, body } = await request(app).post('/artist').send({
+                const { status, body } = await request(app).post('/artists').send({
                     name: 'Tame Impala',
                     genre: 'rock',
                 });

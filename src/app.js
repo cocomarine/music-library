@@ -6,6 +6,6 @@ const app = express();
 
 app.use(express.json());
 
-app.use('/artist', artistRoute);
+app.use('/artists', artistRoute);
 
 module.exports = app;
