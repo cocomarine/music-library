@@ -17,7 +17,7 @@ describe('create artist', () => {
                 expect(body.genre).to.equal('rock');
 
                 const { rows: [ artistData ] } = await db.query(
-                    `SELECT * FROM Artists WHERE id = ${body.id}`
+                    `SELECT * FROM artists WHERE id = ${body.id}`
                 );
                 expect(artistData.name).to.equal('Tame Impala');
                 expect(artistData.genre).to.equal('rock');
