@@ -12,4 +12,6 @@ artistRoute.get('/:artistId', artistController.getArtistById);
 
 artistRoute.put('/:artistId', artistController.updateArtist);
 
+artistRoute.patch('/:artistId', artistController.updateArtistByPatch);
+
 module.exports = artistRoute;
