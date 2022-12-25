@@ -26,7 +26,6 @@ describe('Read Album', () => {
         ])
 
         artists = artistRes.map(({ rows }) => rows[0]);
-        console.log(artists);
         
         const albumRes = await Promise.all([
             db.query(`INSERT INTO Albums (name, year, artistId) VALUES ($1, $2, $3) RETURNING *`, [
@@ -47,7 +46,6 @@ describe('Read Album', () => {
         ])
 
         albums = albumRes.map(({ rows }) => rows[0]);
-        console.log(albums);
     })
 
     describe('GET /albums', () => {
@@ -63,6 +61,26 @@ describe('Read Album', () => {
                 const expected = albums.find((a) => a.id === albumRecord.id);
                 expect(albumRecord).to.deep.equal(expected);
             })
+        })
+    })
+
+    describe('GET /albums/{id}', () => {
+        it('returns the album with the correct id', async () => {
+            const { status, body } = await request(app)
+                .get(`/albums/${albums[0].id}`)
+                .send();
+
+            expect(status).to.equal(200);
+            expect(body).to.deep.equal(albums[0]);
+        })
+
+        it('returns a 404 if the album does not exist', async () => {
+            const { status, body } = await request(app)
+                .get('/albums/9999999')
+                .send();
+
+            expect(status).to.equal(404);
+            expect(body.message).to.equal('album 9999999 does not exist');
         })
     })
 })

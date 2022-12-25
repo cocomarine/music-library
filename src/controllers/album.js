@@ -23,3 +23,18 @@ exports.getAllAlbums = async (_, res) => {
         res.status(500).json(err.message);
     }
 };
+
+exports.getAlbumById = async (req, res) => {
+    try {
+        const { albumId } = req.params;
+        const { rows: [ album ] } = await db.query(`SELECT * FROM albums WHERE id = $1`, [ albumId ]);
+
+        if (!album) {
+            res.status(404).json({ message: `album ${albumId} does not exist` });
+        } 
+    
+        res.status(200).json(album);
+    } catch (err) {
+        res.status(500).json(err.message);
+    }
+};
