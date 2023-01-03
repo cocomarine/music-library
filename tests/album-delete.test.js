@@ -32,10 +32,18 @@ describe('Delete Album', () => {
             expect(body).to.deep.equal({
                 id: album.id,
                 name: 'Currents',
-                year: 2015
+                year: 2015,
+                artistid: artist.id
             });
         });
 
+        it('returns a 404 if the album does not exist', async () => {
+            const { status, body } = await request(app)
+                .delete('/albums/9999999')
+                .send();
 
-    })
-})
+            expect(status).to.equal(404);
+            expect(body.message).to.equal('album 9999999 does not exist');
+        });
+    });
+});

@@ -98,9 +98,7 @@ exports.updateArtistByPatch = async (req, res) => {
 exports.deleteArtist = async (req, res) => {
   try {
     const { artistId } = req.params;
-    const {
-      rows: [artist],
-    } = await db.query(`DELETE FROM Artists WHERE id = $1 RETURNING *`, [
+    const { rows: [artist]} = await db.query(`DELETE FROM Artists WHERE id = $1 RETURNING *`, [
       artistId,
     ]);
 
