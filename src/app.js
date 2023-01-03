@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 
 app.use('/artists', artistRoute);
-app.use('/artists/:artistId/albums', albumRoute1);
+// app.use('/artists/:artistId/albums', albumRoute1);
 app.use('/albums', albumRoute2);
 
 module.exports = app;

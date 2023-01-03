@@ -12,7 +12,6 @@ XXXXX
 - [Future improvements](#future-improvements)
 - [Author](#author)
 
-
 ## Introduction
 
 XXXXX
@@ -39,7 +38,6 @@ XXXXX
 - xxx
 
 ## Features
-
 
 ## Future improvements
 
