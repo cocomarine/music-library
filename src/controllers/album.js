@@ -2,7 +2,8 @@ const db = require('../db/index');
 
 exports.createAlbum = async (req, res) => {
   console.log('I have hit creatAlbum')
-  const { artistId } = req.params;
+  console.log(req.artistId)
+  const artistId = req.artistId;
   const { name, year } = req.body;
 
   try {
@@ -62,3 +63,7 @@ exports.updateAlbum = async (req, res) => {
     res.status(500).json(err.message);
   }
 };
+
+exports.deleteAlbumById = async (req, res) => {
+
+}
