@@ -1,9 +1,7 @@
 const db = require('../db/index');
 
 exports.createAlbum = async (req, res) => {
-  console.log('I have hit creatAlbum')
-  console.log(req.artistId)
-  const artistId = req.artistId;
+  const { artistId } = req.params;
   const { name, year } = req.body;
 
   try {
