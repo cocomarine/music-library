@@ -1,7 +1,6 @@
 const db = require('../db/index');
 
 exports.createAlbum = async (req, res) => {
-
   const { artistId } = req.params;
   const { name, year } = req.body;
 
