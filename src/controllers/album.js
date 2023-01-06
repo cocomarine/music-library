@@ -27,7 +27,9 @@ exports.getAllAlbums = async (_, res) => {
 exports.getAlbumById = async (req, res) => {
   try {
     const { albumId } = req.params;
-    const { rows: [album] } = await db.query(`SELECT * FROM albums WHERE id = $1`, [albumId]);
+    const {
+      rows: [album],
+    } = await db.query(`SELECT * FROM albums WHERE id = $1`, [albumId]);
 
     if (!album) {
       res.status(404).json({ message: `album ${albumId} does not exist` });
@@ -43,7 +45,9 @@ exports.updateAlbum = async (req, res) => {
   try {
     const { albumId } = req.params;
     const { name, year } = req.body;
-    const { rows: [album] } = await db.query(
+    const {
+      rows: [album],
+    } = await db.query(
       `UPDATE Albums SET name = $1, year = $2 WHERE id = $3 RETURNING *`,
       [name, year, albumId]
     );

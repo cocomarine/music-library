@@ -23,12 +23,15 @@ describe('create album', () => {
           year: 2015,
         });
 
+      console.log(body)
       expect(status).to.equal(201);
       expect(body.name).to.equal('Currents');
       expect(body.year).to.equal(2015);
       expect(body.artistid).to.equal(artist.id);
 
-      const { rows: [albumData] } = await db.query(`SELECT * FROM Albums WHERE id = ${body.id}`);
+      const {
+        rows: [albumData],
+      } = await db.query(`SELECT * FROM Albums WHERE id = ${body.id}`);
       expect(albumData.name).to.equal('Currents');
       expect(albumData.year).to.equal(2015);
       expect(albumData.artistid).to.equal(artist.id);
