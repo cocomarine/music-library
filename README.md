@@ -1,48 +1,33 @@
 # Music Library
 
-XXXXX
-
-## Table of contents
-
-- [Introduction](#-introduction)
-- [Installation](#installation)
-- [Technologies and languages](#technologies-and-languages)
-- [Testing](#testing)
-- [Features](#features)
-- [Future improvements](#future-improvements)
-- [Author](#author)
-
-## Introduction
-
-XXXXX
-
-## Installation
-
-- xxx
-- xxx
-- xxx
+A music library API created following a CRUD REST API technology using Node.js, Express, Mocha-Chai, Postman and pgAdmin. 
 
 ## Technologies and languages
 
 - JavaScript
-- Jest
 - Node.js
+- Express
 - Node Package Manager (npm)
+- PostgreSQL
+- Mocha / Chai
+- Github Actions workflow
+- Postman
 - Git & GitHub
-- xxx
-- xxx
+- Docker
 
-## Testing
+## Concepts covered
 
-- xxx
-- xxx
+- Database design
+- PostgreSQL
+- CRUD operation 
+- Using Postman to manage API requests
+- Integration testing with Mocha and Chai
+- XXXX
+- XXX
 
-## Features
+## Getting started
 
-## Future improvements
 
-- xxx
+## API end points
 
-## Author
 
-👤 **HJ Kang** [@cocomarine](https://github.com/cocomarine)
