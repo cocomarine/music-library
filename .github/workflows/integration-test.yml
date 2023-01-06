@@ -13,14 +13,14 @@ jobs:
     env:
       PGHOST: localhost
       PGUSER: postgres
-      PGPASSWORD: postgres
+      PGPASSWORD: password
       PGPORT: 5432
       PGDATABASE: music_library_test
     services:
       postgres:
         image: postgres
         env:
-          POSTGRES_PASSWORD: postgres
+          POSTGRES_PASSWORD: password
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
