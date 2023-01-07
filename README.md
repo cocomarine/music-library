@@ -40,13 +40,14 @@ Returns json data about a single user.
   `GET`
   
 *  **Parameters**
- name              |  type     | data type      | description                         
--------------------|-----------|----------------|-------------------------
- `id=[integer]`    |  required | int            | The specific numeric id             
+name | type | data type | description
+-----|---- -|-----------|--------------
+ `id=[integer]`| required | int | The specific numeric id             
 
 
 * **Response**
- http code     | response                                                            
----------------|--------------------------------------
- `200`         | `{ id : 12, name : "Michael Bloom" }`  
- `400`         | `{ error : "User doesn't exist" }`   
+ http code | response                         
+-----------|-----------
+ `200`  | `{ id : 12, name : "Michael Bloom" }`  
+ `400`  | `{ error : "User doesn't exist" }`   
+
