@@ -29,25 +29,13 @@ A music library API created following a CRUD REST API technology using Node.js, 
 
 ## API end points
 
-Returns json data about a single user.
+### Artist
 
-* **URL**
-
-  /users/:id
-
-* **Method:**
-
-  `GET`
-  
-*  **Parameters**
-name | type | data type | description
------|---- -|-----------|--------------
- `id=[integer]`| required | int | The specific numeric id             
+| Method | URL | Description | Parameters | Body content |
+|--------|-----|-------------|------------|--------------|
+| `POST` | `/artists` | add a new artist | none | name [string], genre [string] | 
+| `GET`  | `/artists`| find all artists | none | none | 
+| `GET` | `/artists/{id}` | find an artist by ID | `id=[integer]` | none | 
 
 
-* **Response**
- http code | response                         
------------|-----------
- `200`  | `{ id : 12, name : "Michael Bloom" }`  
- `400`  | `{ error : "User doesn't exist" }`   
 
