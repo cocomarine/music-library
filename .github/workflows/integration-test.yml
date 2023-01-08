@@ -1,12 +1,12 @@
 name: Integration Tests
 
-# on:
-#   push:
-#     branches:
-#       - main
-#   pull_request:
-#     branches:
-#       - main
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   integration-test:
@@ -27,7 +27,7 @@ jobs:
           --health-timeout 5s
           --health-retries 5
         ports:
-          - 5432:3000
+          - 5432:5432
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
