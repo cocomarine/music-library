@@ -135,6 +135,119 @@ npm start # to start the app at http://localhost:3000
 
 </details>
 
+
+### Album
+
+<details>
+ <summary><code>POST</code> <code><b>/artists/{id}/albums</b></code> <code>(add a new album associated to an artist)</code></summary>
+
+#### Parameters and body content
+
+> | Parameters | Body content |
+> |------------|--------------|
+> | `artistId` | name [string], year [integer] |
+
+
+#### Responses
+
+> | code | description |
+> |------|-------------|
+> | `201` | successful operation
+
+</details>
+
+<details>
+ <summary><code>GET</code> <code><b>/albums</b></code> <code>(find all albums)</code></summary>
+
+#### Parameters and body content
+
+> None
+
+
+#### Responses
+
+> | code | description |
+> |------|-------------|
+> | `200` | successful operation |
+
+</details>
+
+<details>
+ <summary><code>GET</code> <code><b>/albums/{id}</b></code> <code>(find an album by ID)</code></summary>
+
+#### Parameters and body content
+
+> | Parameters | Body content |
+> |------------|--------------|
+> | `albumId` | None |
+
+
+#### Responses
+
+> | code | description |
+> |------|-------------|
+> | `200` | successful operation |
+> | `404` | album not found |
+
+</details>
+
+<details>
+ <summary><code>PUT</code> <code><b>/albums/{id}</b></code> <code>(replace an album with updated record)</code></summary>
+
+#### Parameters and body content
+
+> | Parameters | Body content |
+> |------------|--------------|
+> | `albumId` | name[string], year[integer]|
+
+
+#### Responses
+
+> | code | description |
+> |------|-------------|
+> | `200` | successful operation |
+> | `404` | album not found |
+
+</details>
+
+<details>
+ <summary><code>PATCH</code> <code><b>/albums/{id}</b></code> <code>(update an album's record)</code></summary>
+
+#### Parameters and body content
+
+> | Parameters | Body content |
+> |------------|--------------|
+> | `albumId` | name[string], year[integer]|
+
+
+#### Responses
+
+> | code | description |
+> |------|-------------|
+> | `200` | successful operation |
+> | `404` | album not found |
+
+</details>
+
+<details>
+ <summary><code>DELETE</code> <code><b>/albums/{id}</b></code> <code>(delete an album)</code></summary>
+
+#### Parameters and body content
+
+> | Parameters | Body content |
+> |------------|--------------|
+> | `albumId` | None |
+
+
+#### Responses
+
+> | code | description |
+> |------|-------------|
+> | `200` | successful operation |
+> | `404` | album not found |
+
+</details>
+
 ------------------
 ## Models
 
