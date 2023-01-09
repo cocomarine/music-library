@@ -26,6 +26,31 @@ describe('Update Album', () => {
     it('replaces the album and returns the updated record', async () => {
       const { status, body } = await request(app)
         .put(`/albums/${album.id}`)
+        .send({ name: 'something different', year: 2010 });
+
+      expect(status).to.equal(200);
+      expect(body).to.deep.equal({
+        id: album.id,
+        name: 'something different',
+        year: 2010,
+        artistid: artist.id
+      });
+    });
+
+    it('returns a 404 if the albume does not exist', async () => {
+      const { status, body } = await request(app)
+        .put('/albums/12345')
+        .send({ name: 'something different', year: 2010 });
+
+      expect(status).to.equal(404);
+      expect(body.message).to.equal('album 12345 does not exist')
+    });
+  });
+
+  describe('PATCH /albums/{id}', () => {
+    it('updates the album and returns the updated record', async () => {
+      const { status, body } = await request(app)
+        .patch(`/albums/${album.id}`)
         .send({ name: 'something different', year: 2023 });
 
       expect(status).to.equal(200);
@@ -35,6 +60,15 @@ describe('Update Album', () => {
         year: 2023,
         artistid: artist.id
       });
+    });
+  
+    it('returns a 404 if the albume does not exist', async () => {
+      const { status, body } = await request(app)
+        .patch('/albums/12345')
+        .send({ name: 'something different', year: 2023 });
+
+      expect(status).to.equal(404);
+      expect(body.message).to.equal('album 12345 does not exist')
     });
   });
 });

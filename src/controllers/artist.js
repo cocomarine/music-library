@@ -81,9 +81,7 @@ exports.updateArtistByPatch = async (req, res) => {
   }
 
   try {
-    const {
-      rows: [artist],
-    } = await db.query(query, params);
+    const { rows: [artist] } = await db.query(query, params);
 
     if (!artist) {
       res.status(404).json({ message: `artist ${artistId} does not exist` });

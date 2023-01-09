@@ -23,7 +23,6 @@ describe('create album', () => {
           year: 2015,
         });
 
-      console.log(body)
       expect(status).to.equal(201);
       expect(body.name).to.equal('Currents');
       expect(body.year).to.equal(2015);
