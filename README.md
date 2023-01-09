@@ -17,7 +17,7 @@ A music library API created following a CRUD REST API technology using Node.js, 
 ## Getting started
 Fork and clone the repo, and run the following commands. Use Postman and pgAdmin to check if the CRUD operations are working. 
 ```bash
-npm test  # to test codes
+npm test  # to test the codes
 npm start # to start the app at http://localhost:3000
 ```
 ----------------
@@ -268,7 +268,7 @@ npm start # to start the app at http://localhost:3000
 > | column | data type |
 > |------|-------------|
 > | id | integer (PK) |
-> | title | string |
+> | name | string |
 > | year | integer |
 > | artistId | integer (FK) |
 
