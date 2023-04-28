@@ -88,7 +88,7 @@ exports.updateAlbumByPatch = async (req, res) => {
     res.status(200).json(album);
   } catch (err) {
     res.status(500).json(err.message);
-  };
+  }
 };
 
 exports.deleteAlbumById = async (req, res) => {
