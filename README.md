@@ -20,6 +20,10 @@ Fork and clone the repo, and run the following commands. Use Postman and pgAdmin
 npm test  # to test the codes
 npm start # to start the app at http://localhost:3000
 ```
+API documentation can be accessed at: http://localhost:3000/api-docs/ .
+
+<img src="images/MusicLibrary_apidocs.png" width="30%" alt="Screenshot of Swagger API doc of Musci Library" title="Swagger API doc">
+
 ----------------
 ## API end points
 
