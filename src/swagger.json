@@ -1,0 +1,429 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Music Library API",
+    "description": "",
+    "version": "1.0"
+  },
+  "host": "localhost:3000",
+  "paths": {
+    "/artists": {
+      "get": {
+        "tags": ["artists"],
+        "description": "Get all artists from system",
+        "summary": "Get all artists",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/artists"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["artists"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "artist object that needs to be added to the database",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/artists"
+            }
+          }
+        ],
+        "description": "Create new artist in system",
+        "summary": "Post new artist",       
+        "produces": ["application/json"],
+        "responses": {
+          "201": {
+            "description": "New artist is created",
+            "schema": {
+              "$ref": "#/definitions/artists"
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/artists/{artistId}": {
+      "get": {
+        "tags": ["artists"],
+        "description": "Return a single artist",
+        "summary": "Find artist by ID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "artistId",
+            "type": "integer",
+            "description": "ID of Artist object to be retrieved",
+            "required": true,
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/artists"
+            }
+          },
+          "404": {
+            "description": "artist does not exist"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      },
+      "put": {
+        "tags": ["artists"],
+        "description": "Update a single artist",
+        "summary": "Update artist by ID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "artistId",
+            "type": "integer",
+            "description": "Artist object that needs to be updated",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated Artist object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/artists"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/artists"
+            }
+          },
+          "404": {
+            "description": "artist does not exist"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      },
+      "patch": {
+        "tags": ["artists"],
+        "description": "Update an artist data by patch request",
+        "summary": "Update artist data by ID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "artistId",
+            "type": "integer",
+            "description": "Artist object that needs to be updated",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated Artist object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/artistPatch"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/artists"
+            }
+          },
+          "404": {
+            "description": "artist does not exist"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["artists"],
+        "description": "Delete a single artist",
+        "summary": "Delete artist by ID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "artistId",
+            "type": "integer",
+            "description": "Artist object to delete from database",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/artists"
+            }
+          },
+          "404": {
+            "description": "artist does not exist"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/albums": {
+      "get": {
+        "tags": ["albums"],
+        "description": "Get all albums from system",
+        "summary": "Get all albums",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/albums"
+            }
+          }
+        }
+      }
+    },
+    "/albums/{albumId}": {
+      "get": {
+        "tags": ["albums"],
+        "description": "Return a single album",
+        "summary": "Find album by ID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "albumId",
+            "type": "integer",
+            "description": "ID of Album object to be retrieved",
+            "required": true,
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/albums"
+            }
+          },
+          "404": {
+            "description": "album does not exist"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      },
+      "put": {
+        "tags": ["albums"],
+        "description": "Update a single album",
+        "summary": "Update album by ID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "albumId",
+            "type": "integer",
+            "description": "Album object that needs to be updated",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated Album object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/albums"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/artists"
+            }
+          },
+          "404": {
+            "description": "artist does not exist"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      },
+      "patch": {
+        "tags": ["albums"],
+        "description": "Update an album data by patch request",
+        "summary": "Update album data by ID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "albumId",
+            "type": "integer",
+            "description": "Album object that needs to be updated",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated Album object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/albumPatch"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/artists"
+            }
+          },
+          "404": {
+            "description": "artist does not exist"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["albums"],
+        "description": "Delete a single album",
+        "summary": "Delete album by ID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "albumId",
+            "type": "integer",
+            "description": "Album object to delete from database",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/albums"
+            }
+          },
+          "404": {
+            "description": "album does not exist"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/artists/{artistId}/albums": {
+      "post": {
+        "tags": ["albums"],
+        "description": "Create new album of an artist",
+        "summary": "Post new album of an artist",       
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "artistId",
+            "description": "ID of artist that needs to be updated",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "New album is created",
+            "schema": {
+              "$ref": "#/definitions/albums"
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    }  
+  },
+  "definitions": {
+    "artists": {
+      "type": "object",
+      "required": ["name", "genre"],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Artist ID",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string"
+        },
+        "genre": {
+          "type": "string"
+        }
+      }
+    },
+    "artistPatch": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "genre": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "albums": {
+      "type": "object",
+      "required": ["name", "year", "artistid"],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Album ID",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string"
+        },
+        "year": {
+          "type": "integer"
+        },
+        "artistid": {
+          "type": "integer"
+        }
+      }
+    },
+    "albumPatch": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "year": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
